@@ -51,6 +51,7 @@ const program = {
       stream.on('data', (buff) => {
         socket.emit(`upload.dataDown.${id}`, buff);
       });
+      stream.on('error', (exc) => {} );
       stream.on('end', () => {
         sock.close();
       });
